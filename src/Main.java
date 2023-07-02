@@ -2,13 +2,13 @@ public class Main {
     public static void main(String[] args) {
         int yearLeap = 1764;
         int year = 1763;
-        leapYear(year);
-        leapYear(yearLeap);
+        checkLeapYear(year);
+        checkLeapYear(yearLeap);
         suggestVersion(0, 2014);
         getCountDay(86);
     }
 
-    private static void leapYear(int year) {
+    private static void checkLeapYear(int year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
             System.out.println(year + " Год является високосным");
         } else {
@@ -17,10 +17,8 @@ public class Main {
     }
 
     private static void suggestVersion(int clientOS, int clientDeviceYear) {
-        //int clientOS = 1;
         int iOs = 0;
         int android = 1;
-        //int clientDeviceYear = 2015;
         int yearCheck = 2015;
         if (clientDeviceYear < yearCheck) {
             if (clientOS == iOs) {
