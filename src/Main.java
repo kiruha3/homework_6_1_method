@@ -4,14 +4,15 @@ public class Main {
         int year = 1763;
         leapYear(year);
         leapYear(yearLeap);
-        suggestVersion(0,2014);
-
+        suggestVersion(0, 2014);
+        getCountDay(86);
     }
+
     private static void leapYear(int year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println( year + " Год является високосным");
-        }else {
-            System.out.println( year + " Год является невисокосным");
+            System.out.println(year + " Год является високосным");
+        } else {
+            System.out.println(year + " Год является невисокосным");
         }
     }
 
@@ -39,21 +40,27 @@ public class Main {
             }
         }
     }
-    private static void task4() {
-        int deliveryDistance = 99;
+
+    private static int getDeliveryDays(int deliveryDistance) {
+        //int deliveryDistance = 99;
         int deliveryDay;
         if (deliveryDistance < 100 && deliveryDistance >= 60) {
-            deliveryDay = 3;
-            System.out.println("Потребуется дней: " + deliveryDay);
+            return 3;
         } else if (deliveryDistance < 60 && deliveryDistance >= 20) {
-            deliveryDay = 2;
-            System.out.println("Потребуется дней: " + deliveryDay);
+            return 2;
         } else if (deliveryDistance < 20) {
-            deliveryDay = 1;
-            System.out.println("Потребуется дней: " + deliveryDay);
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    private static void getCountDay(int deliveryDay) {
+        int deliveryDays = getDeliveryDays(deliveryDay);
+        if (deliveryDays > 0) {
+            System.out.println("Потребуется дней: " + deliveryDays);
         } else {
             System.out.println("Доставка не осуществляется");
         }
-
     }
 }
