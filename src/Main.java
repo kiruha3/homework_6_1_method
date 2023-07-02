@@ -40,8 +40,6 @@ public class Main {
     }
 
     private static int getDeliveryDays(int deliveryDistance) {
-        //int deliveryDistance = 99;
-        int deliveryDay;
         if (deliveryDistance < 100 && deliveryDistance >= 60) {
             return 3;
         } else if (deliveryDistance < 60 && deliveryDistance >= 20) {
